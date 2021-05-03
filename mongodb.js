@@ -56,7 +56,8 @@
 //     console.log(result.name);
 //     db.close();
 //   });
-// }); ------------------------------find one 
+// }); 
+//------------------------------find one --------------------------------------------
 
 // var MongoClient = require('mongodb').MongoClient
 // var url = "mongodb://localhost:27017/"
@@ -69,7 +70,8 @@
 //     console.log(result)
 //     db.close()
 //   })
-// }) ------------------------------- find all
+// }) 
+//------------------------------- find all------------------------------------------
 
 // var MongoClient = require('mongodb').MongoClient
 // var url = "mongodb://localhost:27017/"
@@ -82,7 +84,8 @@
 //     console.log(result);
 //     db.close();
 //   });
-// }); ---------------------------------projection otional 0 field is not showing
+// }); 
+//------------------projection otional 0 field is not showing--------------------------
 
 // let a = require('mongodb').MongoClient
 // let url = 'mongodb://localhost:27017/'
@@ -96,6 +99,93 @@
 //     console.log(result)
 //     db.close()
 //   })
-// })====================================== filter 
+//==================================== filter  ==================================
+
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("swdb");
+//   var mysort = { name: 1 };
+//   dbo.collection("customers").find().sort(mysort).toArray(function(err, result) {
+//     if (err) throw err;
+//     console.log(result);
+//     db.close();
+//   });
+// }); 
+//================== sort 1 ascending -1 descending ================================
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("swdb");
+//   var myquery = { address: /^O/ };
+//   dbo.collection("customers").deleteMany(myquery, function(err, obj) {
+//     if (err) throw err;
+//     console.log(obj.result.n + "documents deleted");
+//     db.close();
+//   });
+// }); 
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("mydb");
+//   dbo.collection("customers").drop(function(err, aaa) {
+//     if (err) throw err;
+//     if (aaa) console.log("Collection deleted");
+//     db.close();
+//   });
+// });
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("mydb");
+//   dbo.dropCollection("customers", function(err, delOK) {
+//     if (err) throw err;
+//     if (delOK) console.log("Collection deleted");
+//     db.close();
+//   });
+// });
+//==================================== drop table dropcollection  ==================================
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://127.0.0.1:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("swdb");
+//   var myquery = { address: /^S/ };
+//   var newvalues = {$set: {name: "Minnie"} };
+//   dbo.collection("customers").updateMany(myquery, newvalues, function(err, res) {
+//     if (err) throw err;
+//     console.log(res.result.nModified + " document(s) updated");
+//     db.close();
+//   });
+// });
+//==================================== update one specific and many  ==================================
+
+// var MongoClient = require('mongodb').MongoClient;
+// var url = "mongodb://localhost:27017/";
+
+// MongoClient.connect(url, function(err, db) {
+//   if (err) throw err;
+//   var dbo = db.db("swdb");
+//   dbo.collection("customers").find().limit(5).toArray(function(err, a) {
+//     if (err) throw err;
+//     console.log(a);
+//     db.close();
+//   });
+// });
+//======================================= limit showing =====================================================
 
 
