@@ -1,7 +1,7 @@
 const express = require('express')  
 const morgan = require('morgan')
 const mongoose = require('mongoose')
-const Blog = require('./models/blog')
+const Blog = require('./blog')
 
 const app = express()
 const dbURI = 'mongodb+srv://LeeUser:aa123456@cluster0.8kbcr.mongodb.net/node-tutor?retryWrites=true&w=majority'

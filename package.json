@@ -11,7 +11,7 @@
     "url": "git+https://github.com/luthentic/NODEJS.git"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/luthentic/NODEJS/issues"
   },
@@ -21,6 +21,10 @@
     "express": "^4.17.1",
     "lodash": "^4.17.21",
     "mongoose": "^5.12.13",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "webpack": "^5.38.1"
+  },
+  "devDependencies": {
+    "webpack-cli": "^4.7.2"
   }
 }
